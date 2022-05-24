@@ -80,7 +80,7 @@ where population <200 or population> 9500000;
 # 13: Get the cities with the countrycodes TJK, MRT, AND, PNG, SJM
 select name,countrycode
 from city
-where countrycode in ('TJK, MRT,AND, PNG, SJM');
+where countrycode in ('TJK', 'MRT','AND', 'PNG', 'SJM');
 #
 # 14: Get the cities with a population between 200 and 700 inclusive
 #
@@ -90,7 +90,7 @@ where Population between 200 and 700;
 #
 # 15: Get the countries with a population between 8000 and 20000 inclusive
 #
-select name
+select name,population
 from country
 where population between 8000 and 20000;
 #
@@ -104,10 +104,10 @@ where  (indepyear)< 0;
 #
 select name,indepyear,population
 from country
-where indepyear=null and population>1000000;
+where indepyear is null and population>1000000;
 #
 # 18: Get countries with a SurfaceArea below 10 and a defined LifeExpectancy
 #
 select name
 from country
-where SurfaceArea<10 and LifeExpectancy;
+where SurfaceArea<10 and LifeExpectancy is not null;
